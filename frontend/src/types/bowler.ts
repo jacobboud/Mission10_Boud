@@ -3,6 +3,8 @@ type team = {
   teamName: string;
 };
 
+//Connecting tables together
+
 export type bowler = {
   bowlerId: number;
   bowlerLastName: string;

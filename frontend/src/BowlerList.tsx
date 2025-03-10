@@ -8,7 +8,7 @@ function BowlerList() {
     const fetchBowler = async () => {
       const response = await fetch('https://localhost:5000/Bowler');
       const data = await response.json();
-      setBowlers(data);
+      setBowlers(data); {/*Connecting to backend*/}
     };
     fetchBowler();
   }, []);
@@ -40,7 +40,7 @@ function BowlerList() {
               <td>{b.bowlerMiddleInit ?? '-'}</td>
               <td>{b.bowlerAddress}</td>
               <td>{b.bowlerCity}</td>
-              <td>{b.bowlerState}</td>
+              <td>{b.bowlerState}</td> {/*Inserting all of the data*/}
               <td>{b.bowlerZip}</td>
               <td>{b.bowlerPhoneNumber}</td>
               <td>{b.teams.teamName}</td>

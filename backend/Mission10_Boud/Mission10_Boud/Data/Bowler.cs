@@ -23,7 +23,9 @@ namespace Mission10_Boud.Data
         public int BowlerZip { get; set; }
         [Required]
         public string BowlerPhoneNumber { get; set; }
-        [ForeignKey("CategoryId")]
+
+        //Connecting other table
+        [ForeignKey("TeamID")]
         public int TeamID { get; set; }
 
         public Team Teams { get; set; }

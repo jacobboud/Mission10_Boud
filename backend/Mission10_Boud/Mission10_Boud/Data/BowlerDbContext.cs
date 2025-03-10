@@ -10,6 +10,7 @@ namespace Mission10_Boud.Data
 
         }
 
+        //Getting tables
         public DbSet<Bowler> Bowlers { get; set; }
         public DbSet<Team> Teams { get; set; }
 

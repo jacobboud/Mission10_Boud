@@ -15,6 +15,8 @@ namespace Mission10_Boud.Repositories
             _context = temp;
         }
 
+        //Formatting data with filters to send over
+
         public IEnumerable<Bowler> GetBowlers()
         {
             return _context.Bowlers.Include(b => b.Teams).Where(b => b.Teams.TeamName == "Marlins" || b.Teams.TeamName == "Sharks").ToList();
