@@ -1,0 +1,124 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Mission10_Boud",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Bowler": {
+      "get": {
+        "tags": [
+          "Bowler"
+        ],
+        "operationId": "GetBowler",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bowler"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bowler"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bowler"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Bowler": {
+        "required": [
+          "bowlerAddress",
+          "bowlerCity",
+          "bowlerFirstName",
+          "bowlerLastName",
+          "bowlerPhoneNumber",
+          "bowlerState",
+          "bowlerZip"
+        ],
+        "type": "object",
+        "properties": {
+          "bowlerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bowlerLastName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bowlerFirstName": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bowlerMiddleInit": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerAddress": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bowlerCity": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bowlerState": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "bowlerZip": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bowlerPhoneNumber": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "teamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teams": {
+            "$ref": "#/components/schemas/Team"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "teamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teamName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
